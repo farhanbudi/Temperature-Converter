@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        body{
+            background-color: #dcb7eb;
+        }
+        .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+            width: 80%;
+        }
+        #unit-change {
+            margin-top: 20px;
+            margin-bottom: 20px ;
+        }
+        .form-inline {
+            margin-top: 30px;
+        }
+        #btn-change {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center border p-5">
+            <p id="datetime" onload="timer()"></p>
+            <h2>Temperature Convertion</h2>
+            <form id="unit-change">
+                <span>Select Temperature Unit: </span>
+                <span>From</span>
+                <select id="temperature-from">
+                    <option value="celcius">Celcius</option>
+                    <option value="reamur">Reamur</option>
+                    <option value="farenheit">Farenheit</option>   
+                </select>
+                <span>To</span>
+                <select id="temperature-to">
+                    <option value="celcius">Celcius</option>
+                    <option value="reamur">Reamur</option>
+                    <option value="farenheit">Farenheit</option>
+                </select>
+            </form>
+            <p>Write the Temperature Number: </p>
+            <input type="number" class="form-control" id="input" placeholder="Write the Temperature Number" onkeyup="convert()">
+            <br>
+            <p>Temperature Conversion Results: </p>
+            <input type="number" class="form-control" id="output" placeholder="Result" readonly>
+            <br>
+        </div>
+        <form class="form-inline">
+            <div class="form-group">    
+                <label>Change the Background Color:</label> 
+                <input class="form-control" id="bg-input" type="text" placeholder="Write the Background Color">
+                <button type="button" class="btn btn-light" id="btn-change" onclick="changeBg()">Change</button>
+            </div>
+        </form>
+    </div>
+    
+</body>
+<script defer src="main.js"></script>
+<script>
+    window.onload = timer();
+    function timer() {
+        const dt = new Date();
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        document.querySelector("#datetime").innerHTML = days[dt.getDay()] +", "+ dt.toLocaleString();
+        setTimeout(timer, 1000); 
+    }
+</script>
+
+</html>
