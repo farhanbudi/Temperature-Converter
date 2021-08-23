@@ -17,7 +17,7 @@ function convert_temperature(temp, from, to) {
         if (to == 'celcius') {
             temp = temp*5/4;
         } else if (to == 'farenheit') {
-            temp = (temp*9/5) + 32;
+            temp = (temp*9/4) + 32;
         }
     } else {
         if (to == 'celcius') {

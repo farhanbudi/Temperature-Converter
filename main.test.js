@@ -21,7 +21,7 @@ test("reamur to reamur", () => {
 });
 
 test("reamur to farenheit", () => {
-    expect(convert(20, 'reamur', 'farenheit')).toBe(68);
+    expect(convert(20, 'reamur', 'farenheit')).toBe(77);
 });
 
 test("farenheit to celcius", () => {
