@@ -10,13 +10,13 @@ function convert_temperature(temp, from, to) {
     if (from == 'celcius') {
         if (to == 'reamur') {
             temp = temp*4/5;
-        } else if (to == 'farenheit') {
+        } else if (to == 'fahrenheit') {
             temp = (temp*9/5) + 32;
         }
     } else if (from == 'reamur') {
         if (to == 'celcius') {
             temp = temp*5/4;
-        } else if (to == 'farenheit') {
+        } else if (to == 'fahrenheit') {
             temp = (temp*9/4) + 32;
         }
     } else {
